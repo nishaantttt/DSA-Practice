@@ -4,9 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 class Solution {
-    // Mapping from digit to letters.
     private static final Map<Character, String> KEYPAD = new HashMap<>();
-    
     static {
         KEYPAD.put('2', "abc");
         KEYPAD.put('3', "def");
@@ -20,7 +18,6 @@ class Solution {
     
     public List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
-        // Edge case: if digits is null or empty, return an empty list.
         if (digits == null || digits.length() == 0) {
             return result;
         }
@@ -29,23 +26,20 @@ class Solution {
     }
     
     private void backtrack(String digits, int index, StringBuilder combination, List<String> result) {
-        // Base case: if we've reached the end of the digit string, add the combination.
         if (index == digits.length()) {
             result.add(combination.toString());
             return;
         }
-        
         char digit = digits.charAt(index);
         String letters = KEYPAD.get(digit);
         if (letters == null) {
-            return; // Skip invalid digits (if any).
+            return; 
         }
         
-        // For each letter corresponding to the current digit, append it and proceed.
         for (char letter : letters.toCharArray()) {
             combination.append(letter);
             backtrack(digits, index + 1, combination, result);
-            combination.deleteCharAt(combination.length() - 1); // Backtrack.
+            combination.deleteCharAt(combination.length() - 1);
         }
     }
 }
