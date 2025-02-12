@@ -8,8 +8,7 @@ class Solution {
     return resultList;
   }
 
-  private void backtrack(List<List<Integer>> resultList,
-                         ArrayList<Integer> tempList, int[] nums) {
+  private void backtrack(List<List<Integer>> resultList,ArrayList<Integer> tempList, int[] nums) {
     // If we match the length, it is a permutation
     if (tempList.size() == nums.length) {
       resultList.add(new ArrayList<>(tempList));
