@@ -14,7 +14,7 @@ class Solution {
         ListNode fast = head;
         ListNode temp = head;
         int c= 0 ;
-        if(head.next==null){
+        if(head.next==null || head==null){
             return null;
         }
         while(temp!=null){
