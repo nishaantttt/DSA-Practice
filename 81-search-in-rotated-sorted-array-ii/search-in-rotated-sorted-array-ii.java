@@ -10,14 +10,11 @@ class Solution {
                 return true;
             }
             
-            if (nums[mid] == nums[left]) {
+            if (nums[mid] == nums[left] && nums[mid] == nums[right]) {
                 left++;
                 continue;
             }
-            if (nums[mid] == nums[right]) {
-                right--;
-                continue;
-            }
+            
             
             if (nums[left] <= nums[mid]) {
                 if (nums[left] <= target && target < nums[mid]) {
