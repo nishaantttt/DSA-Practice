@@ -17,7 +17,7 @@ public class Solution {
             if (val % 2 == 0) {
                 length += val;
             } else {
-                length += val - 1;   // use the even part
+                length += val - 1;   // 1 minus karke odd ko even banake (use the even part) add kardo usey bhi
                 hasOdd = true;
             }
         }
