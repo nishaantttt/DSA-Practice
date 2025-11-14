@@ -14,9 +14,10 @@ class Solution {
         ListNode fast = head;
         ListNode temp = head;
         int c= 0 ;
-        if(head.next==null || head==null){
-            return null;
+        if(head.next==null){
+            return head.next;
         }
+
         while(temp!=null){
             c++;
             temp=temp.next;
@@ -29,7 +30,7 @@ class Solution {
             }
         }
         else{
-            while(fast.next.next.next!=null && fast.next.next!=null){
+            while(fast.next.next.next!=null && fast!=null && fast.next.next!=null && fast.next!=null){
                 slow=slow.next;
                 fast=fast.next.next;
             }
