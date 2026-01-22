@@ -10,6 +10,7 @@ class Solution {
 
             dp[i] = Math.max(pick, notpick);
         }
+        
         return dp[nums.length-1];
 
     }
